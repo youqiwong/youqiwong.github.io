@@ -178,8 +178,7 @@ const MultipleCoVTDemo = () => {
         { leftImage: './pics/demo3_zoom2.png', rightImage: './pics/demo3_ori.png', leftLabel: 'Zoom-In 2', rightLabel: 'ORIGINAL', isZoom: true },
         { leftImage: './pics/demo3_zoom3.png', rightImage: './pics/demo3_ori.png', leftLabel: 'Zoom-In 3', rightLabel: 'ORIGINAL', isZoom: true }
       ]
-    },
-    { id: 4, originalImage: './pics/demo2_ori.png', question: 'Placeholder Demo 4', toolCalls: [], answer: 'Placeholder', playgroundTools: [] }
+    }
   ];
 
   const currentDemo = demos.find(d => d.id === activeDemo);
@@ -204,7 +203,7 @@ const MultipleCoVTDemo = () => {
 
       {/* Demo 选择按钮 */}
       <div className="flex justify-center gap-4 mb-8">
-        {[1, 2, 3, 4].map((num) => (
+        {[1, 2, 3].map((num) => (
           <button
             key={num}
             onClick={() => handleDemoChange(num)}
@@ -380,7 +379,7 @@ export default function ForgeryVCRPage() {
   // 密码保护功能
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
-  const correctPassword = 'forgeryvcr2025'; // 设置你的密码
+  const correctPassword = 'forgerycr'; // 设置你的密码
 
   // 监听滚动，判断是否显示回到顶部按钮
   useEffect(() => {
