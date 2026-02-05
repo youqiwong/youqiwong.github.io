@@ -778,10 +778,10 @@ export default function ForgeryVCRPage() {
           <div className="bg-white rounded-lg p-6 mt-6 shadow-md border-l-4 border-amber-500">
             <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
               <span className="text-2xl mr-2">🏆</span>
-              State-of-the-Art Performance
+              State-of-the-Art Detection Performance
             </h3>
             <ul className="space-y-2 text-slate-600 leading-relaxed">
-              <li><strong>Top-Tier Accuracy:</strong> Achieves a weighted average F1-score of 0.8271, outperforming the previous best method (FakeShield) by approximately 11%.</li>
+              <li><strong>Top-Tier Accuracy:</strong> Achieves a weighted average F1-score of 0.8271, outperforming the previous SOTA (FakeShield) by ~11%.</li>
               <li><strong>Superior Generalization:</strong> Maintains consistent performance across diverse benchmarks, effectively overcoming the severe false-positive bias seen in traditional specialist networks.</li>
               <li><strong>Hallucination-Free:</strong> Bypasses linguistic descriptions to rely solely on visual intermediates, mitigating the semantic hallucinations common in standard MLLMs.</li>
             </ul>
@@ -802,11 +802,11 @@ export default function ForgeryVCRPage() {
           <div className="bg-white rounded-lg p-6 mt-6 shadow-md border-l-4 border-teal-500">
             <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
               <span className="text-2xl mr-2">🎯</span>
-              High-Precision Localization
+              Superior Localization Performance
             </h3>
             <ul className="space-y-2 text-slate-600 leading-relaxed">
-              <li><strong>Precise Grounding:</strong> Attains an overall IoU of 0.5306 by utilizing SAM2 with model-predicted bounding boxes as visual prompts.</li>
-              <li><strong>Visual-Centric Advantage:</strong> Demonstrates that purely visual reasoning preserves spatial exactness, avoiding the "dilution" of location details caused by textual rationales.</li>
+              <li><strong>Precise Grounding:</strong> Secures the top spot with 0.5306 pixel-level IoU, surpassing the second-best result via SAM2 refinement. </li>
+              <li><strong>Visual-Centric Advantage:</strong> Demonstrates that purely visual reasoning preserves spatial exactness, avoiding the dilution of location details caused by textual rationales.</li>
               <li><strong>Robust Segmentation:</strong> Delivers competitive performance against specialist networks, ensuring high-fidelity mask generation across various manipulation types and domains.</li>
             </ul>
           </div>
@@ -829,11 +829,15 @@ export default function ForgeryVCRPage() {
                   className="w-full rounded-lg"
                 />
               </div>
-              <div className="bg-white rounded-lg p-6 flex-grow flex flex-col" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-                <h3 className="text-lg font-bold mb-3 text-slate-900">Training Dynamics</h3>
-                <p className="text-sm text-slate-600 text-justify leading-relaxed flex-grow">
-                  The evolution of model dynamics during the RL stage is tracked in the figure above. The steady ascent in total reward contrasts with the stabilization of interaction turns at a lower level, indicating that the MLLM evolves from random exploration to adaptive execution. Crucially, this reduction in tool usage does not compromise performance; instead, it reflects a learned selectivity where the model invokes specific forensic tools only when necessary for the given input. This behavior confirms that reward-driven optimization fosters a task-aware strategy, effectively balancing detection precision with computational efficiency by eliminating redundant inference steps.
-                </p>
+              <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-indigo-500 flex-grow flex flex-col">
+                <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
+                  <span className="text-2xl mr-2">📈</span>
+                  Training Dynamics
+                </h3>
+                <ul className="space-y-2 text-slate-600 leading-relaxed flex-grow">
+                  <li><strong>Adaptive Evolution:</strong> The steady rise in total rewards contrasts with decreased interaction turns, indicating the model evolves from random exploration to strategic execution.</li>
+                  <li><strong>Efficiency-Precision Balance:</strong> The model learns "selectivity," invoking forensic tools only when necessary to maximize detection accuracy while eliminating redundant inference steps.</li>
+                </ul>
               </div>
             </div>
 
@@ -846,11 +850,15 @@ export default function ForgeryVCRPage() {
                   className="w-full rounded-lg"
                 />
               </div>
-              <div className="bg-white rounded-lg p-6 flex-grow flex flex-col" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-                <h3 className="text-lg font-bold mb-3 text-slate-900">Tool Usage</h3>
-                <p className="text-sm text-slate-600 text-justify leading-relaxed flex-grow">
-                  We analyze the distribution of tool invocations to evaluate the impact of RL. Initially, the SFT stage exhibits a tendency toward indiscriminate tool usage, notably applying the Zoom-In function frequently even on authentic images. In contrast, the RL stage effectively suppresses these non-informative invocations by optimizing for utility. As evidenced by the dataset-specific statistics, the MLLM learns to autonomously bypass tool invocation when direct visual assessment suffices, leading to a notable increase in direct inference across all benchmarks. This transition confirms that the model shifts from mechanical execution to a dynamic, efficiency-oriented investigation policy.
-                </p>
+              <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-purple-500 flex-grow flex flex-col">
+                <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
+                  <span className="text-2xl mr-2">🛠️</span>
+                  Tool Usage
+                </h3>
+                <ul className="space-y-2 text-slate-600 leading-relaxed flex-grow">
+                  <li><strong>Suppression of Redundancy:</strong> Unlike the SFT stage which tends to use tools indiscriminately (e.g., unnecessary Zoom-In), the RL stage effectively filters out non-informative invocations.</li>
+                  <li><strong>Dynamic Investigation:</strong> The model shifts from mechanical execution to a dynamic policy, learning to autonomously bypass tools and rely on direct visual assessment when sufficient.</li>
+                </ul>
               </div>
             </div>
           </div>
