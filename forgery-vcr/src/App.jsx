@@ -379,7 +379,7 @@ export default function ForgeryVCRPage() {
   // 密码保护功能
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
-  const correctPassword = 'forgerycr'; // 设置你的密码
+  const correctPassword = 'forgeryvcr'; // 设置你的密码
 
   // 监听滚动，判断是否显示回到顶部按钮
   useEffect(() => {
