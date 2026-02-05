@@ -903,10 +903,71 @@ export default function ForgeryVCRPage() {
         </div>
       </section>
 
-      {/* 5. Visual-Centric Reasoning Visualization */}
+      {/* 5. Visualization */}
       <section id="visualization" className="max-w-6xl mx-auto px-6 mb-20">
-        <h1 className="text-3xl font-bold mb-6 text-slate-900 text-center">Visual-Centric Reasoning Visualization</h1>
-        <MultipleCoVTDemo />
+        <h1 className="text-4xl font-bold mb-12 text-slate-900 text-center">Visualization</h1>
+        
+        {/* 5.1 Visual-Centric Reasoning Visualization */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 text-slate-800 text-center">Visual-Centric Reasoning Visualization</h2>
+          <MultipleCoVTDemo />
+        </div>
+
+        {/* 5.2 Forgery Localization Mask Visualization */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-slate-800 text-center">Forgery Localization Mask Visualization</h2>
+          
+          <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 mb-8">
+            <p className="text-lg text-slate-700 mb-6 leading-relaxed text-center">
+              We present a <span className="font-semibold text-blue-600">qualitative comparison of pixel-level localization masks</span> across benchmark datasets. 
+              ForgeryVCR is compared with representative baselines including specialist networks and forensic-tuned MLLMs. 
+              Our method consistently produces <span className="font-semibold">high-fidelity masks</span> that closely align with the Ground Truth (GT), 
+              effectively suppressing background noise and accurately delineating manipulation boundaries, 
+              even in datasets with complex editing and diverse manipulations.
+            </p>
+
+            <div className="flex flex-col items-center mb-6">
+              <img 
+                src="./pics/fig11_allmasks.png" 
+                alt="Qualitative comparison of pixel-level localization masks"
+                className="w-full max-w-5xl rounded-lg shadow-lg"
+              />
+              <p className="text-sm text-slate-600 mt-4 italic text-center max-w-5xl">
+                <span className="font-semibold">Figure 6:</span> Qualitative comparison of pixel-level localization masks across benchmark datasets. 
+                We compare ForgeryVCR with representative baselines including specialist networks (MVSS-Net, IF-OSN, TruFor, CoDE, HiFi-Net, PIM, SAFIRE, FakeShield, SIDA) 
+                and forensic-tuned MLLMs. Each row displays results from different benchmark datasets (CASIA, COVERAGE, DEFACTO, IMD, CAIDE, NIST16, COLUMBIA, WILD). 
+                Our method consistently produces high-fidelity masks that closely align with the Ground Truth (GT), 
+                effectively suppressing background noise and accurately delineating manipulation boundaries.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-blue-500">
+                <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
+                  <span className="text-2xl mr-2">🏆</span>
+                  Superior to SOTA Methods
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Compared to specialist networks (MVSS-Net, TruFor, HiFi-Net) and forensic-tuned MLLMs (FakeShield, SIDA), 
+                  ForgeryVCR demonstrates superior localization accuracy by grounding decisions in explicit visual forensic evidence 
+                  rather than relying solely on learned patterns or semantic understanding.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-teal-500">
+                <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
+                  <span className="text-2xl mr-2">🎯</span>
+                  High-Fidelity Mask Generation
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  By leveraging forensic tools (ELA, FFT, NPP, Zoom-In), ForgeryVCR transforms imperceptible tampering traces 
+                  into explicit visual evidence, enabling precise pixel-level mask generation that closely aligns with ground truth 
+                  across diverse manipulation types and benchmark datasets.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <footer className="py-8 text-center text-slate-400 text-sm">
