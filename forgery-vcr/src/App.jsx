@@ -934,8 +934,8 @@ export default function ForgeryVCRPage() {
               />
               <p className="text-sm text-slate-600 mt-4 italic text-center max-w-5xl">
                 <span className="font-semibold">Figure 6:</span> Qualitative comparison of pixel-level localization masks across benchmark datasets. 
-                We compare ForgeryVCR with representative baselines including specialist networks (MVSS-Net, IF-OSN, TruFor, CoDE, HiFi-Net, PIM, SAFIRE, FakeShield, SIDA) 
-                and forensic-tuned MLLMs. Each row displays results from different benchmark datasets (CASIA, COVERAGE, DEFACTO, IMD, CAIDE, NIST16, COLUMBIA, WILD). 
+                We compare ForgeryVCR with representative baselines including specialist networks (MVSS-Net, IF-OSN, TruFor, CoDE, HDF-Net, PIM, SAFIRE, FakeShield, SIDA) 
+                and forensic-tuned MLLMs. Each row displays results from different datasets (CASIA v1, Columbia, Coverage, DSO, CocoGlide, Korus, In-the-wild, NIST16). 
                 Our method consistently produces high-fidelity masks that closely align with the Ground Truth (GT), 
                 effectively suppressing background noise and accurately delineating manipulation boundaries.
               </p>
@@ -948,7 +948,7 @@ export default function ForgeryVCRPage() {
                   Superior to SOTA Methods
                 </h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Compared to specialist networks (MVSS-Net, TruFor, HiFi-Net) and forensic-tuned MLLMs (FakeShield, SIDA), 
+                  Compared to specialist networks (MVSS-Net, TruFor, HDF-Net) and forensic-tuned MLLMs (FakeShield, SIDA), 
                   ForgeryVCR demonstrates superior localization accuracy by grounding decisions in explicit visual forensic evidence 
                   rather than relying solely on learned patterns or semantic understanding.
                 </p>
@@ -970,10 +970,6 @@ export default function ForgeryVCRPage() {
         </div>
       </section>
 
-      <footer className="py-8 text-center text-slate-400 text-sm">
-        <p>© 2025 ForgeryVCR Project. All rights reserved.</p>
-        <p className="mt-2">Template designed for Research Project Pages.</p>
-      </footer>
       </div>
 
       {/* 回到顶部按钮 */}
