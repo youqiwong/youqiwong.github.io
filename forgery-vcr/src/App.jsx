@@ -713,8 +713,6 @@ export default function ForgeryVCRPage() {
 
         {/* Part 1: Strategic Tool Learning Pipeline (Figure 2) */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-4 text-slate-900 text-center">Visual-Centric Reasoning via RL Optimization</h2>
-          
           <div className="flex flex-col items-center mb-6">
             <img 
               src="./pics/fig2_comic.png" 
@@ -726,28 +724,6 @@ export default function ForgeryVCRPage() {
             <p className="text-sm text-slate-600 text-justify leading-relaxed">
               <strong>Figure 2: Overview of the ForgeryVCR Framework.</strong> The top panel depicts the architecture. The training pipeline: (1) Stage 1 uses Gain-Driven Tool Selection and Multi-Trajectories Synthesis to construct diverse reasoning paths; (2) Stage 2 optimizes the policy via GRPO with Tool-Utility Reward to foster strategic tool usage. The right panel shows the reasoning chain invoking tools to expose subtle artifacts for precise localization, guiding SAM2 to generate the fine-grained mask.
             </p>
-          </div>
-
-          <div className="bg-white rounded-lg p-8 max-w-4xl mx-auto" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-            <p className="text-base leading-relaxed text-slate-600 text-justify mb-4">
-              To transform MLLMs from passive classifiers into proactive forensic investigators, we design a two-stage training pipeline (as shown in Figure 2):
-            </p>
-            <div className="mb-4">
-              <p className="text-base leading-relaxed text-slate-600 text-justify mb-2">
-                <strong>Stage 1: Cold Start (SFT)</strong>
-              </p>
-              <p className="text-base leading-relaxed text-slate-600 text-justify ml-4">
-                We first endow the model with basic forensic capabilities through Supervised Fine-Tuning (SFT). Unlike traditional Textual Chain-of-Thought (CoT), our <strong>Visual-Centric CoT</strong> trains the model to directly generate tool code (e.g., calling ELA or Zoom-In) and reason based on the <strong>explicit visual intermediates</strong> returned by tools. This avoids semantic hallucinations caused by textual descriptions.
-              </p>
-            </div>
-            <div>
-              <p className="text-base leading-relaxed text-slate-600 text-justify mb-2">
-                <strong>Stage 2: Reinforcement Learning (RL)</strong>
-              </p>
-              <p className="text-base leading-relaxed text-slate-600 text-justify ml-4">
-                To teach the model to use tools "intelligently," we introduce a Reinforcement Learning stage based on GRPO. The key innovation is the <strong>Tool Utility Reward</strong>: the model is only rewarded when it invokes tools <strong>when necessary</strong> and <strong>obtains correct results</strong>. This forces the model to learn to <strong>reject redundant operations</strong> (e.g., not randomly using tools on obviously authentic or simple samples), achieving optimal balance between accuracy and reasoning efficiency.
-              </p>
-            </div>
           </div>
         </div>
 
@@ -766,28 +742,6 @@ export default function ForgeryVCRPage() {
             <p className="text-sm text-slate-600 text-justify leading-relaxed">
               <strong>Figure 3: Pipeline of Visual-Centric Trajectory Construction.</strong> The pipeline rigorously filters effective tools and generates diverse reasoning paths through Gain-Driven Tool Selection and Multi-Trajectories Synthesis. Three trajectory types are constructed: (1) Forensic Analysis Trajectories utilizing FFT, ELA, and NPP tools; (2) Visual Refinement Trajectories incorporating Zoom-In operations; (3) Iterative Hybrid Trajectories combining both approaches.
             </p>
-          </div>
-
-          <div className="bg-white rounded-lg p-8 max-w-4xl mx-auto mb-6" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-            <p className="text-base leading-relaxed text-slate-600 text-justify mb-4">
-              High-quality reasoning trajectories are crucial for training Visual-Centric capabilities. To prevent the model from blindly memorizing tool calls, we design a <strong>Gain-Driven</strong> data construction pipeline (as shown in Figure 3):
-            </p>
-            <div className="mb-4">
-              <p className="text-base leading-relaxed text-slate-600 text-justify mb-2">
-                <strong>Gain-Driven Tool Selection</strong>
-              </p>
-              <p className="text-base leading-relaxed text-slate-600 text-justify ml-4">
-                Not all tools are effective for all images. We pre-evaluate the <strong>performance gain</strong> of each tool on the current sample through lightweight models. Only tools that can actually reveal tampering traces are retained, while ineffective tools are filtered out.
-              </p>
-            </div>
-            <div>
-              <p className="text-base leading-relaxed text-slate-600 text-justify mb-2">
-                <strong>Multi-Trajectories Synthesis</strong>
-              </p>
-              <p className="text-base leading-relaxed text-slate-600 text-justify ml-4">
-                Based on the filtered effective tools, we synthesize multiple types of reasoning paths (Type 1-3): from single-tool verification to coarse-to-fine <strong>Zoom-In</strong> inspection. This diversified trajectory training enables the model to flexibly combine different tools for multi-view verification when facing complex forgeries.
-              </p>
-            </div>
           </div>
 
           {/* Figure 4: Multi-Trajectories Examples */}
@@ -819,10 +773,18 @@ export default function ForgeryVCRPage() {
               className="w-full max-w-4xl rounded-lg"
             />
           </div>
-          <div className="bg-white rounded-lg p-8 max-w-4xl mx-auto" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-            <p className="text-base leading-relaxed text-slate-600 text-justify">
-              The quantitative comparison for image-level forgery detection is presented in Table 1. <strong>ForgeryVCR</strong> achieves SOTA performance, attaining a weighted average F1-score of 0.8271 and Accuracy of 0.8261. Compared to the second-best method, FakeShield, ForgeryVCR yields an absolute improvement of approximately 11%, with significant margins on challenging benchmarks such as Coverage and NIST16. Furthermore, the visual-centric approach consistently outperforms the visual-textual counterpart (ForgeryVCR*), demonstrating that bypassing linguistic descriptions mitigates semantic hallucinations and enhances detection accuracy. Notably, while pure localization methods attain perfect scores on the all-manipulated In-the-wild dataset, their low accuracy on balanced benchmarks exposes a severe false-positive bias, whereas ForgeryVCR maintains consistent metrics across diverse datasets, confirming superior generalization.
-            </p>
+
+          {/* Box 1: Image-level Forgery Detection */}
+          <div className="bg-white rounded-lg p-6 mt-6 shadow-md border-l-4 border-amber-500">
+            <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
+              <span className="text-2xl mr-2">🏆</span>
+              State-of-the-Art Performance
+            </h3>
+            <ul className="space-y-2 text-slate-600 leading-relaxed">
+              <li><strong>Top-Tier Accuracy:</strong> Achieves a weighted average F1-score of 0.8271, outperforming the previous best method (FakeShield) by approximately 11%.</li>
+              <li><strong>Superior Generalization:</strong> Maintains consistent performance across diverse benchmarks, effectively overcoming the severe false-positive bias seen in traditional specialist networks.</li>
+              <li><strong>Hallucination-Free:</strong> Bypasses linguistic descriptions to rely solely on visual intermediates, mitigating the semantic hallucinations common in standard MLLMs.</li>
+            </ul>
           </div>
         </div>
 
@@ -835,10 +797,18 @@ export default function ForgeryVCRPage() {
               className="w-full max-w-4xl rounded-lg"
             />
           </div>
-          <div className="bg-white rounded-lg p-8 max-w-4xl mx-auto" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-            <p className="text-base leading-relaxed text-slate-600 text-justify">
-              Beyond detection, we evaluate pixel-level localization performance in Table 2. By utilizing SAM2 with predicted bounding boxes as visual prompts, <strong>ForgeryVCR</strong> attains superior localization capabilities, recording an overall IoU of 0.5306. The performance advantage over ForgeryVCR* underscores that the purely Visual-Centric Reasoning mechanism is essential for high-precision localization, as the inclusion of textual rationales tends to dilute the spatial exactness required for guiding segmentation. Consequently, our method achieves competitive performance against specialist networks. While specialist networks often exhibit domain-specific variances, ForgeryVCR delivers superior overall performance across diverse manipulation types.
-            </p>
+
+          {/* Box 2: Pixel-level Forgery Localization */}
+          <div className="bg-white rounded-lg p-6 mt-6 shadow-md border-l-4 border-teal-500">
+            <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
+              <span className="text-2xl mr-2">🎯</span>
+              High-Precision Localization
+            </h3>
+            <ul className="space-y-2 text-slate-600 leading-relaxed">
+              <li><strong>Precise Grounding:</strong> Attains an overall IoU of 0.5306 by utilizing SAM2 with model-predicted bounding boxes as visual prompts.</li>
+              <li><strong>Visual-Centric Advantage:</strong> Demonstrates that purely visual reasoning preserves spatial exactness, avoiding the "dilution" of location details caused by textual rationales.</li>
+              <li><strong>Robust Segmentation:</strong> Delivers competitive performance against specialist networks, ensuring high-fidelity mask generation across various manipulation types and domains.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -939,32 +909,6 @@ export default function ForgeryVCRPage() {
                 Our method consistently produces high-fidelity masks that closely align with the Ground Truth (GT), 
                 effectively suppressing background noise and accurately delineating manipulation boundaries.
               </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-              <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-blue-500">
-                <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
-                  <span className="text-2xl mr-2">🏆</span>
-                  Superior to SOTA Methods
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  Compared to specialist networks (MVSS-Net, TruFor, HDF-Net) and forensic-tuned MLLMs (FakeShield, SIDA), 
-                  ForgeryVCR demonstrates superior localization accuracy by grounding decisions in explicit visual forensic evidence 
-                  rather than relying solely on learned patterns or semantic understanding.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-teal-500">
-                <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
-                  <span className="text-2xl mr-2">🎯</span>
-                  High-Fidelity Mask Generation
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  By leveraging forensic tools (ELA, FFT, NPP, Zoom-In), ForgeryVCR transforms imperceptible tampering traces 
-                  into explicit visual evidence, enabling precise pixel-level mask generation that closely aligns with ground truth 
-                  across diverse manipulation types and benchmark datasets.
-                </p>
-              </div>
             </div>
           </div>
         </div>
