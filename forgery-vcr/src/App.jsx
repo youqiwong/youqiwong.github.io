@@ -133,53 +133,53 @@ const MultipleCoVTDemo = () => {
   const demos = [
     {
       id: 1,
-      originalImage: '/pics/demo1_ori.png',
+      originalImage: './pics/demo1_ori.png',
       question: "Perform a forgery detection. Classify the image as real or fake, and if tampered, output the coordinates of the bounding boxes.",
       toolCalls: [
-        { name: 'ELA', image: '/pics/demo1_ela.png', args: null },
-        { name: 'FFT', image: '/pics/demo1_fft.png', args: null },
-        { name: 'NPP', image: '/pics/demo1_npp.png', args: null }
+        { name: 'ELA', image: './pics/demo1_ela.png', args: null },
+        { name: 'FFT', image: './pics/demo1_fft.png', args: null },
+        { name: 'NPP', image: './pics/demo1_npp.png', args: null }
       ],
       answer: 'fake, <|box_start|>(193,144),(627,646)<|box_end|>',
       playgroundTools: [
-        { leftImage: '/pics/demo1_ela.png', rightImage: '/pics/demo1_ori.png', leftLabel: 'ELA', rightLabel: 'ORIGINAL' },
-        { leftImage: '/pics/demo1_fft.png', rightImage: '/pics/demo1_ori.png', leftLabel: 'FFT', rightLabel: 'ORIGINAL' },
-        { leftImage: '/pics/demo1_npp.png', rightImage: '/pics/demo1_ori.png', leftLabel: 'NPP', rightLabel: 'ORIGINAL' }
+        { leftImage: './pics/demo1_ela.png', rightImage: './pics/demo1_ori.png', leftLabel: 'ELA', rightLabel: 'ORIGINAL' },
+        { leftImage: './pics/demo1_fft.png', rightImage: './pics/demo1_ori.png', leftLabel: 'FFT', rightLabel: 'ORIGINAL' },
+        { leftImage: './pics/demo1_npp.png', rightImage: './pics/demo1_ori.png', leftLabel: 'NPP', rightLabel: 'ORIGINAL' }
       ]
     },
     {
       id: 2,
-      originalImage: '/pics/demo2_ori.png',
+      originalImage: './pics/demo2_ori.png',
       question: "Please analyze whether this image is real or fake. If it's not authentic, show me the bounding boxes of the tampered zones.",
       toolCalls: [
-        { name: 'ELA', image: '/pics/demo2_ela.png', args: null },
-        { name: 'FFT', image: '/pics/demo2_fft.png', args: null },
-        { name: 'Zoom-In', image: '/pics/demo2_zoom.png', args: '[169, 225, 624, 472]' }
+        { name: 'ELA', image: './pics/demo2_ela.png', args: null },
+        { name: 'FFT', image: './pics/demo2_fft.png', args: null },
+        { name: 'Zoom-In', image: './pics/demo2_zoom.png', args: '[169, 225, 624, 472]' }
       ],
       answer: 'fake, <|box_start|>(756,379),(838,688)<|box_end|>',
       playgroundTools: [
-        { leftImage: '/pics/demo2_ela.png', rightImage: '/pics/demo2_ori.png', leftLabel: 'ELA', rightLabel: 'ORIGINAL' },
-        { leftImage: '/pics/demo2_fft.png', rightImage: '/pics/demo2_ori.png', leftLabel: 'FFT', rightLabel: 'ORIGINAL' },
-        { leftImage: '/pics/demo2_zoom.png', rightImage: '/pics/demo2_ori.png', leftLabel: 'Zoom-In', rightLabel: 'ORIGINAL', isZoom: true }
+        { leftImage: './pics/demo2_ela.png', rightImage: './pics/demo2_ori.png', leftLabel: 'ELA', rightLabel: 'ORIGINAL' },
+        { leftImage: './pics/demo2_fft.png', rightImage: './pics/demo2_ori.png', leftLabel: 'FFT', rightLabel: 'ORIGINAL' },
+        { leftImage: './pics/demo2_zoom.png', rightImage: './pics/demo2_ori.png', leftLabel: 'Zoom-In', rightLabel: 'ORIGINAL', isZoom: true }
       ]
     },
     {
       id: 3,
-      originalImage: '/pics/demo3_ori.png',
+      originalImage: './pics/demo3_ori.png',
       question: "What is the status of this image, real or fake? If you detect manipulation, please provide the bounding boxes.",
       toolCalls: [
-        { name: 'Zoom-In', image: '/pics/demo3_zoom1.png', args: '[150, 383, 274, 543]' },
-        { name: 'Zoom-In', image: '/pics/demo3_zoom2.png', args: '[40, 356, 91, 631]' },
-        { name: 'Zoom-In', image: '/pics/demo3_zoom3.png', args: '[58, 456, 89, 531]' }
+        { name: 'Zoom-In', image: './pics/demo3_zoom1.png', args: '[150, 383, 274, 543]' },
+        { name: 'Zoom-In', image: './pics/demo3_zoom2.png', args: '[40, 356, 91, 631]' },
+        { name: 'Zoom-In', image: './pics/demo3_zoom3.png', args: '[58, 456, 89, 531]' }
       ],
       answer: 'fake, <|box_start|>(50,383),(74,443)<|box_end|>',
       playgroundTools: [
-        { leftImage: '/pics/demo3_zoom1.png', rightImage: '/pics/demo3_ori.png', leftLabel: 'Zoom-In 1', rightLabel: 'ORIGINAL', isZoom: true },
-        { leftImage: '/pics/demo3_zoom2.png', rightImage: '/pics/demo3_ori.png', leftLabel: 'Zoom-In 2', rightLabel: 'ORIGINAL', isZoom: true },
-        { leftImage: '/pics/demo3_zoom3.png', rightImage: '/pics/demo3_ori.png', leftLabel: 'Zoom-In 3', rightLabel: 'ORIGINAL', isZoom: true }
+        { leftImage: './pics/demo3_zoom1.png', rightImage: './pics/demo3_ori.png', leftLabel: 'Zoom-In 1', rightLabel: 'ORIGINAL', isZoom: true },
+        { leftImage: './pics/demo3_zoom2.png', rightImage: './pics/demo3_ori.png', leftLabel: 'Zoom-In 2', rightLabel: 'ORIGINAL', isZoom: true },
+        { leftImage: './pics/demo3_zoom3.png', rightImage: './pics/demo3_ori.png', leftLabel: 'Zoom-In 3', rightLabel: 'ORIGINAL', isZoom: true }
       ]
     },
-    { id: 4, originalImage: '/pics/demo2_ori.png', question: 'Placeholder Demo 4', toolCalls: [], answer: 'Placeholder', playgroundTools: [] }
+    { id: 4, originalImage: './pics/demo2_ori.png', question: 'Placeholder Demo 4', toolCalls: [], answer: 'Placeholder', playgroundTools: [] }
   ];
 
   const currentDemo = demos.find(d => d.id === activeDemo);
@@ -677,7 +677,7 @@ export default function ForgeryVCRPage() {
         <div className="flex flex-col items-center p-4">
           <div className="transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl rounded-lg">
             <img 
-              src="/pics/fig1_comic.svg" 
+              src="./pics/fig1_comic.svg" 
               alt="ForgeryVCR Framework Diagram"
               className="w-full max-w-3xl rounded-lg"
             />
@@ -718,7 +718,7 @@ export default function ForgeryVCRPage() {
           
           <div className="flex flex-col items-center mb-6">
             <img 
-              src="/pics/fig2_comic.png" 
+              src="./pics/fig2_comic.png" 
               alt="ForgeryVCR Framework Overview"
               className="w-full max-w-4xl rounded-lg"
             />
@@ -758,7 +758,7 @@ export default function ForgeryVCRPage() {
           
           <div className="flex flex-col items-center mb-6">
             <img 
-              src="/pics/fig3_comic.png" 
+              src="./pics/fig3_comic.png" 
               alt="Visual-Centric Trajectory Construction"
               className="w-full max-w-4xl rounded-lg"
             />
@@ -794,7 +794,7 @@ export default function ForgeryVCRPage() {
           {/* Figure 4: Multi-Trajectories Examples */}
           <div className="flex flex-col items-center mb-6">
             <img 
-              src="/pics/fig4_multivcot.png" 
+              src="./pics/fig4_multivcot.png" 
               alt="Multi-Trajectories Examples"
               className="w-full max-w-4xl rounded-lg"
             />
@@ -815,7 +815,7 @@ export default function ForgeryVCRPage() {
         <div className="mb-12">
           <div className="flex flex-col items-center mb-6">
             <img 
-              src="/pics/table1.png" 
+              src="./pics/table1.png" 
               alt="Detection Performance Comparison"
               className="w-full max-w-4xl rounded-lg"
             />
@@ -831,7 +831,7 @@ export default function ForgeryVCRPage() {
         <div className="mb-12">
           <div className="flex flex-col items-center mb-6">
             <img 
-              src="/pics/table2.png" 
+              src="./pics/table2.png" 
               alt="Localization Performance Comparison"
               className="w-full max-w-4xl rounded-lg"
             />
@@ -855,7 +855,7 @@ export default function ForgeryVCRPage() {
             <div className="flex flex-col h-full">
               <div className="mb-4 flex-shrink-0">
                 <img 
-                  src="/pics/fig5_trainingdynamics.png" 
+                  src="./pics/fig5_trainingdynamics.png" 
                   alt="Training Dynamics"
                   className="w-full rounded-lg"
                 />
@@ -872,7 +872,7 @@ export default function ForgeryVCRPage() {
             <div className="flex flex-col h-full">
               <div className="mb-4 flex-shrink-0 mt-1.5">
                 <img 
-                  src="/pics/fig6_SFT_RL_notools.png" 
+                  src="./pics/fig6_SFT_RL_notools.png" 
                   alt="Tool Usage"
                   className="w-full rounded-lg"
                 />
@@ -891,7 +891,7 @@ export default function ForgeryVCRPage() {
         <div className="mb-12">
           <div className="flex flex-col items-center mb-6">
             <img 
-              src="/pics/fig7_comic.png" 
+              src="./pics/fig7_comic.png" 
               alt="Policy Evolution from SFT to RL"
               className="w-full max-w-4xl rounded-lg"
             />
