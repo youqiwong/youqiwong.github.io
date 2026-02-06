@@ -616,7 +616,7 @@ export default function ForgeryVCRPage() {
             />
           </div>
           <div className="mt-4 bg-white rounded-lg p-6 max-w-3xl" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-            <p className="text-center text-sm text-slate-600">
+            <p className="text-justify text-sm text-slate-600">
               <strong>Figure 1: Motivation.</strong> Unlike prior methods limited by semantic bias, ForgeryVCR employs <strong>Visual-Centric Reasoning</strong>, grounding the verdict in visual evidence rather than vague descriptions.
             </p>
           </div>
