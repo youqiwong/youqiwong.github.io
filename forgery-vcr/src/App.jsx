@@ -615,9 +615,11 @@ export default function ForgeryVCRPage() {
               className="w-full max-w-3xl rounded-lg"
             />
           </div>
-          <p className="mt-4 text-center text-sm text-slate-600 max-w-3xl">
-            <strong>Figure 1: Motivation.</strong> Unlike prior methods limited by semantic bias, ForgeryVCR employs <strong>Visual-Centric Reasoning</strong>, grounding the verdict in visual evidence rather than vague descriptions.
-          </p>
+          <div className="mt-4 bg-white rounded-lg p-6 max-w-3xl" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
+            <p className="text-center text-sm text-slate-600">
+              <strong>Figure 1: Motivation.</strong> Unlike prior methods limited by semantic bias, ForgeryVCR employs <strong>Visual-Centric Reasoning</strong>, grounding the verdict in visual evidence rather than vague descriptions.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -830,13 +832,13 @@ export default function ForgeryVCRPage() {
               even in datasets with complex editing and diverse manipulations.
             </p>
 
-            <div className="flex flex-col items-center mb-6">
+            <div className="flex flex-col items-center">
               <img 
                 src="./pics/fig11_allmasks.png" 
                 alt="Qualitative comparison of pixel-level localization masks"
                 className="w-full max-w-5xl rounded-lg shadow-lg"
               />
-              <p className="text-sm text-slate-600 mt-4 italic text-center max-w-5xl">
+              <p className="text-sm text-slate-600 mt-4 italic text-justify max-w-5xl">
                 <span className="font-semibold">Figure 6:</span> Qualitative comparison of pixel-level localization masks across benchmark datasets. 
                 We compare ForgeryVCR with representative baselines including specialist networks (MVSS-Net, IF-OSN, TruFor, CoDE, HDF-Net, PIM, SAFIRE, FakeShield, SIDA) 
                 and forensic-tuned MLLMs. Each row displays results from different datasets (CASIA v1, Columbia, Coverage, DSO, CocoGlide, Korus, In-the-wild, NIST16). 
