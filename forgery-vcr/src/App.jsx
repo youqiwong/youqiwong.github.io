@@ -375,11 +375,6 @@ export default function ForgeryVCRPage() {
   const [activeSection, setActiveSection] = useState('abstract');
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  
-  // 密码保护功能
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [password, setPassword] = useState('');
-  const correctPassword = 'forgeryvcr'; // 设置你的密码
 
   // 监听滚动，判断是否显示回到顶部按钮
   useEffect(() => {
@@ -415,67 +410,6 @@ export default function ForgeryVCRPage() {
     });
   };
 
-  // 密码验证页面
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-teal-50">
-        <style>{styles}</style>
-        <div className="bg-white p-10 rounded-3xl shadow-2xl max-w-md w-full mx-4 border border-gray-200">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600">
-              ForgeryVCR
-            </h2>
-            <p className="text-slate-600 text-sm">This page is password protected</p>
-          </div>
-          
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">Password</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                onKeyPress={(e) => {
-                  if (e.key === 'Enter') {
-                    if (password === correctPassword) {
-                      setIsAuthenticated(true);
-                    } else {
-                      alert('❌ Incorrect password. Please try again.');
-                      setPassword('');
-                    }
-                  }
-                }}
-                placeholder="Enter password"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-                autoFocus
-              />
-            </div>
-            
-            <button
-              onClick={() => {
-                if (password === correctPassword) {
-                  setIsAuthenticated(true);
-                } else {
-                  alert('❌ Incorrect password. Please try again.');
-                  setPassword('');
-                }
-              }}
-              className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-            >
-              Access Project Page
-            </button>
-          </div>
-          
-          <div className="mt-6 pt-6 border-t border-gray-200">
-            <p className="text-xs text-slate-500 text-center">
-              💡 This is a preview version. Contact the authors for access.
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-blue-100 relative">
       {/* 添加动画样式 */}
@@ -503,7 +437,7 @@ export default function ForgeryVCRPage() {
         height: sidebarOpen ? 'calc(100vh - 12rem)' : '0',
         maxHeight: 'calc(100vh - 12rem)'
       }}>
-        <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 h-full overflow-y-auto">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 h-full overflow-y-auto">
           <h3 className="text-xl font-bold text-slate-900 mb-4">ForgeryVCR</h3>
           <nav className="space-y-2">
             <a 
@@ -757,17 +691,17 @@ export default function ForgeryVCRPage() {
         <h1 className="text-3xl font-bold mb-6 text-slate-900 text-center">Experiments</h1>
         
         {/* Detection Performance Table */}
-        <div className="mb-12">
-          <div className="flex flex-col items-center mb-6">
+        <div className="mb-12 max-w-4xl mx-auto">
+          <div className="flex flex-col items-center mb-4">
             <img 
               src="./pics/table1.png" 
               alt="Detection Performance Comparison"
-              className="w-full max-w-4xl rounded-lg"
+              className="w-full rounded-lg"
             />
           </div>
 
           {/* Box 1: Image-level Forgery Detection */}
-          <div className="bg-white rounded-lg p-6 mt-6 shadow-md border-l-4 border-amber-500">
+          <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-amber-500">
             <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
               <span className="text-2xl mr-2">🏆</span>
               State-of-the-Art Detection Performance
@@ -781,17 +715,17 @@ export default function ForgeryVCRPage() {
         </div>
 
         {/* Localization Performance Table */}
-        <div className="mb-12">
-          <div className="flex flex-col items-center mb-6">
+        <div className="mb-12 max-w-4xl mx-auto">
+          <div className="flex flex-col items-center mb-4">
             <img 
               src="./pics/table2.png" 
               alt="Localization Performance Comparison"
-              className="w-full max-w-4xl rounded-lg"
+              className="w-full rounded-lg"
             />
           </div>
 
           {/* Box 2: Pixel-level Forgery Localization */}
-          <div className="bg-white rounded-lg p-6 mt-6 shadow-md border-l-4 border-teal-500">
+          <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-teal-500">
             <h3 className="text-lg font-semibold text-slate-800 mb-3 flex items-center">
               <span className="text-2xl mr-2">🎯</span>
               Superior Localization Performance
