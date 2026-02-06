@@ -709,7 +709,7 @@ export default function ForgeryVCRPage() {
               State-of-the-Art Detection Performance
             </h3>
             <ul className="space-y-2 text-slate-600 leading-relaxed">
-              <li><strong>Top-Tier Accuracy:</strong> Achieves a weighted average F1-score of 0.8271, outperforming the previous SOTA (FakeShield) by ~11%.</li>
+              <li><strong>Top-Tier Accuracy:</strong> Achieves a weighted average F1-score of 0.8271, outperforming the previous SOTA by ~11%.</li>
               <li><strong>Superior Generalization:</strong> Maintains consistent performance across diverse benchmarks, effectively overcoming the severe false-positive bias seen in traditional specialist networks.</li>
               <li><strong>Hallucination-Free:</strong> Bypasses linguistic descriptions to rely solely on visual intermediates, mitigating the semantic hallucinations common in standard MLLMs.</li>
             </ul>
