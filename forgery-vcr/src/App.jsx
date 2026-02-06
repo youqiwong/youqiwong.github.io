@@ -649,7 +649,7 @@ export default function ForgeryVCRPage() {
             />
           </div>
           <div className="bg-white rounded-lg p-6 w-full max-w-4xl mx-auto mb-6" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-            <p className="text-sm text-slate-600 text-justify leading-relaxed">
+            <p className="text-justify text-sm text-slate-600">
               <strong>Figure 2: Overview of the ForgeryVCR Framework.</strong> The top panel depicts the architecture. The training pipeline: (1) Stage 1 uses Gain-Driven Tool Selection and Multi-Trajectories Synthesis to construct diverse reasoning paths; (2) Stage 2 optimizes the policy via GRPO with Tool-Utility Reward to foster strategic tool usage. The right panel shows the reasoning chain invoking tools to expose subtle artifacts for precise localization, guiding SAM2 to generate the fine-grained mask.
             </p>
           </div>
@@ -667,7 +667,7 @@ export default function ForgeryVCRPage() {
             />
           </div>
           <div className="bg-white rounded-lg p-6 w-full max-w-4xl mx-auto mb-6" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-            <p className="text-sm text-slate-600 text-justify leading-relaxed">
+            <p className="text-justify text-sm text-slate-600">
               <strong>Figure 3: Pipeline of Visual-Centric Trajectory Construction.</strong> The pipeline rigorously filters effective tools and generates diverse reasoning paths through Gain-Driven Tool Selection and Multi-Trajectories Synthesis. Three trajectory types are constructed: (1) Forensic Analysis Trajectories utilizing FFT, ELA, and NPP tools; (2) Visual Refinement Trajectories incorporating Zoom-In operations; (3) Iterative Hybrid Trajectories combining both approaches.
             </p>
           </div>
@@ -681,7 +681,7 @@ export default function ForgeryVCRPage() {
             />
           </div>
           <div className="bg-white rounded-lg p-6 w-full max-w-4xl mx-auto" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-            <p className="text-sm text-slate-600 text-justify leading-relaxed">
+            <p className="text-justify text-sm text-slate-600">
               <strong>Figure 4: Examples of Multi-Trajectories.</strong> Three trajectory types are demonstrated: (a) <strong>Forensic Analysis Trajectory</strong> sequentially invokes forensic tools (ELA, FFT, NPP) to expose statistical inconsistencies; (b) <strong>Visual Refinement Trajectory</strong> incorporates multiple Zoom-In operations for fine-grained local inspection; (c) <strong>Iterative Hybrid Trajectory</strong> combines both forensic analysis and visual refinement in an alternating manner to achieve comprehensive verification.
             </p>
           </div>
@@ -802,7 +802,7 @@ export default function ForgeryVCRPage() {
             />
           </div>
           <div className="bg-white rounded-lg p-6 w-full max-w-4xl mx-auto" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-            <p className="text-sm text-slate-600 text-justify leading-relaxed">
+            <p className="text-justify text-sm text-slate-600">
               <strong>Figure 5: Qualitative comparison of policy evolution from Cold Start (SFT) to RL Optimization.</strong> The three columns illustrate distinct improvement behaviors: <strong>(Left)</strong> correcting ineffective tool selection (switching from ELA to FFT) to fix false negatives; <strong>(Middle)</strong> pruning redundant tools (removing NPP) to eliminate noise and improve efficiency; and <strong>(Right)</strong> refining spatial grounding to maximize localization precision using the same forensic cues.
             </p>
           </div>
@@ -838,7 +838,7 @@ export default function ForgeryVCRPage() {
                 alt="Qualitative comparison of pixel-level localization masks"
                 className="w-full max-w-5xl rounded-lg shadow-lg"
               />
-              <p className="text-sm text-slate-600 mt-4 italic text-justify max-w-5xl">
+              <p className="text-justify text-sm text-slate-600 max-w-5xl mt-4">
                 <span className="font-semibold">Figure 6:</span> Qualitative comparison of pixel-level localization masks across benchmark datasets. 
                 We compare ForgeryVCR with representative baselines including specialist networks (MVSS-Net, IF-OSN, TruFor, CoDE, HDF-Net, PIM, SAFIRE, FakeShield, SIDA) 
                 and forensic-tuned MLLMs. Each row displays results from different datasets (CASIA v1, Columbia, Coverage, DSO, CocoGlide, Korus, In-the-wild, NIST16). 
