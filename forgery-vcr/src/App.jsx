@@ -701,15 +701,7 @@ export default function ForgeryVCRPage() {
       <section id="method" className="max-w-5xl mx-auto px-6 mb-16">
         <h1 className="text-3xl font-bold mb-6 text-slate-900 text-center">Methodology</h1>
         
-        {/* Overview - Core Concept */}
-        <div className="mb-12">
-          <div className="bg-white rounded-lg p-8 max-w-4xl mx-auto" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-            <h2 className="text-2xl font-bold mb-4 text-slate-900">ForgeryVCR: Visual-Centric Reasoning Framework</h2>
-            <p className="text-base leading-relaxed text-slate-600 text-justify">
-              We propose a <strong>Visual-Centric Reasoning</strong> paradigm that transforms MLLMs from passive classifiers into proactive forensic investigators. Through a two-stage <strong>Strategic Tool Learning</strong> pipeline, the model learns to actively plan, invoke forensic tools, and directly interpret visual evidence—just like human experts—while avoiding semantic hallucinations caused by textual descriptions.
-            </p>
-          </div>
-        </div>
+        <h2 className="text-2xl font-bold mb-8 text-slate-900 text-center">ForgeryVCR: Visual-Centric Reasoning Framework</h2>
 
         {/* Part 1: Strategic Tool Learning Pipeline (Figure 2) */}
         <div className="mb-12">
@@ -835,7 +827,7 @@ export default function ForgeryVCRPage() {
                   Training Dynamics
                 </h3>
                 <ul className="space-y-2 text-slate-600 leading-relaxed flex-grow">
-                  <li><strong>Adaptive Evolution:</strong> The steady rise in total rewards contrasts with decreased interaction turns, indicating the model evolves from random exploration to strategic execution.</li>
+                  <li><strong>Adaptive Evolution:</strong> The steady rise in rewards contrasts with decreased interaction turns, indicating the model evolves from random exploration to strategic execution.</li>
                   <li><strong>Efficiency-Precision Balance:</strong> The model learns "selectivity," invoking forensic tools only when necessary to maximize detection accuracy while eliminating redundant inference steps.</li>
                 </ul>
               </div>
@@ -856,7 +848,7 @@ export default function ForgeryVCRPage() {
                   Tool Usage
                 </h3>
                 <ul className="space-y-2 text-slate-600 leading-relaxed flex-grow">
-                  <li><strong>Suppression of Redundancy:</strong> Unlike the SFT stage which tends to use tools indiscriminately (e.g., unnecessary Zoom-In), the RL stage effectively filters out non-informative invocations.</li>
+                  <li><strong>Suppression of Redundancy:</strong> Unlike the SFT stage which tends to use tools indiscriminately, the RL stage effectively filters out non-informative invocations.</li>
                   <li><strong>Dynamic Investigation:</strong> The model shifts from mechanical execution to a dynamic policy, learning to autonomously bypass tools and rely on direct visual assessment when sufficient.</li>
                 </ul>
               </div>
