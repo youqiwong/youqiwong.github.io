@@ -733,7 +733,7 @@ export default function ForgeryVCRPage() {
               Superior Localization Performance
             </h3>
             <ul className="space-y-2 text-slate-600 leading-relaxed">
-              <li><strong>Precise Grounding:</strong> Secures the top spot with 0.5306 pixel-level IoU, surpassing the second-best result via SAM2 refinement. </li>
+              <li><strong>Precise Grounding:</strong> Secures the top spot with 0.5306 pixel-level IoU, surpassing the second-best result via SAM2. </li>
               <li><strong>Visual-Centric Advantage:</strong> Demonstrates that purely visual reasoning preserves spatial exactness, avoiding the dilution of location details caused by textual rationales.</li>
               <li><strong>Robust Segmentation:</strong> Delivers competitive performance against specialist networks, ensuring high-fidelity mask generation across various manipulation types and domains.</li>
             </ul>
@@ -764,7 +764,7 @@ export default function ForgeryVCRPage() {
                 </h3>
                 <ul className="space-y-2 text-slate-600 leading-relaxed flex-grow">
                   <li><strong>Adaptive Evolution:</strong> The steady rise in rewards contrasts with decreased interaction turns, indicating the model evolves from random exploration to strategic execution.</li>
-                  <li><strong>Efficiency-Precision Balance:</strong> The model learns "selectivity," invoking forensic tools only when necessary to maximize detection accuracy while eliminating redundant inference steps.</li>
+                  <li><strong>Efficiency-Precision Balance:</strong> The model learns selectivity, invoking forensic tools only when necessary to maximize detection accuracy while eliminating redundant inference steps.</li>
                 </ul>
               </div>
             </div>
