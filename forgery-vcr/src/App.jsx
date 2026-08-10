@@ -709,7 +709,7 @@ export default function ForgeryVCRPage() {
             </h3>
             <ul className="space-y-2 text-slate-600 leading-relaxed">
               <li><strong>Best Weighted Performance:</strong> Achieves the highest weighted average F1-score of 0.7985 and Accuracy of 0.8237 across all benchmarks.</li>
-              <li><strong>Consistent Generalization:</strong> Delivers the best F1-score on six of nine benchmarks, including the challenging SID-Set.</li>
+              <li><strong>Consistent Generalization:</strong> Delivers the best F1-score on six of nine benchmarks.</li>
               <li><strong>Visual-Centric Advantage:</strong> Grounds predictions in visual forensic evidence, mitigating semantic hallucinations caused by text-centric reasoning.</li>
             </ul>
           </div>
