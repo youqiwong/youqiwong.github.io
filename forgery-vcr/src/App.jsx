@@ -554,18 +554,17 @@ export default function ForgeryVCRPage() {
 
         {/* Action Buttons */}
         <div className="flex justify-center gap-4">
-          <button 
-            disabled
-            className="relative flex items-center px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg cursor-not-allowed opacity-80 group"
-            title="Coming soon"
+          <a
+            href="https://arxiv.org/abs/2602.14098"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex items-center px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg hover:bg-slate-700 hover:-translate-y-0.5 active:translate-y-0 group"
+            aria-label="Read the ForgeryVCR paper on arXiv"
           >
             {/* Academicons arXiv 图标 */}
             <i className="ai ai-arxiv mr-2" style={{ fontSize: '20px' }}></i>
             arXiv
-            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-slate-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-              Coming soon
-            </span>
-          </button>
+          </a>
           <a
             href="https://github.com/youqiwong/ForgeryVCR"
             target="_blank"
