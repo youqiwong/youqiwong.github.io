@@ -578,28 +578,26 @@ export default function ForgeryVCRPage() {
             </svg>
             Code
           </a>
-          <button 
-            disabled
-            className="relative flex items-center px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg cursor-not-allowed opacity-80 group"
-            title="Coming soon"
+          <a
+            href="https://huggingface.co/spaces/youqiwong/ForgeryVCR-Demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex items-center px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg hover:bg-slate-700 hover:-translate-y-0.5 active:translate-y-0 group"
+            aria-label="Try the ForgeryVCR demo on Hugging Face"
           >
             <Play size={18} className="mr-2" />
             Demo
-            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-slate-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-              Coming soon
-            </span>
-          </button>
-          <button 
-            disabled
-            className="relative flex items-center px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg cursor-not-allowed opacity-80 group"
-            title="Coming soon"
+          </a>
+          <a
+            href="https://huggingface.co/youqiwong/ForgeryVCR"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex items-center px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg hover:bg-slate-700 hover:-translate-y-0.5 active:translate-y-0 group"
+            aria-label="View the ForgeryVCR model on Hugging Face"
           >
             <Box size={18} className="mr-2" />
             Model
-            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-slate-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-              Coming soon
-            </span>
-          </button>
+          </a>
         </div>
       </header>
 
