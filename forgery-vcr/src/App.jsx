@@ -400,6 +400,9 @@ export default function ForgeryVCRPage() {
       });
     }
     setActiveSection(sectionId);
+    if (window.matchMedia('(max-width: 1023px)').matches) {
+      setSidebarOpen(false);
+    }
   };
 
   // 回到顶部函数
@@ -411,14 +414,16 @@ export default function ForgeryVCRPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-blue-100 relative">
+    <div className="project-page min-h-screen bg-white text-slate-800 font-sans selection:bg-blue-100 relative overflow-x-hidden">
       {/* 添加动画样式 */}
       <style>{styles}</style>
       
       {/* Toggle button - Fixed position, always visible */}
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="fixed left-6 top-24 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-teal-400 to-blue-400 text-white hover:scale-110 shadow-lg transition-all duration-300"
+        className="floating-nav-toggle fixed left-6 top-24 z-50 hidden lg:flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-teal-400 to-blue-400 text-white hover:scale-110 shadow-lg transition-all duration-300"
+        aria-label={sidebarOpen ? 'Close section navigation' : 'Open section navigation'}
+        aria-expanded={sidebarOpen}
       >
         <ChevronLeft 
           size={24} 
@@ -430,7 +435,7 @@ export default function ForgeryVCRPage() {
       </button>
 
       {/* Sidebar Navigation - Below the button */}
-      <aside className={`fixed left-6 z-40 transition-all duration-500 overflow-hidden ${
+      <aside className={`floating-sidebar fixed left-6 z-40 hidden lg:block transition-all duration-500 overflow-hidden ${
         sidebarOpen ? 'top-40 opacity-100' : 'top-24 opacity-0 pointer-events-none'
       }`}
       style={{ 
@@ -518,8 +523,8 @@ export default function ForgeryVCRPage() {
       <div>
       
       {/* 1. Header / Title Section */}
-      <header className="pt-20 pb-12 text-center max-w-5xl mx-auto px-6">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-slate-900">
+      <header className="hero pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-12 text-center max-w-5xl mx-auto px-4 sm:px-6">
+        <h1 className="hero-title text-[clamp(2rem,8.5vw,3rem)] md:text-4xl lg:text-5xl leading-[1.08] sm:leading-tight font-extrabold tracking-tight mb-6 text-slate-900">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600">
           ForgeryVCR
           </span>
@@ -527,9 +532,9 @@ export default function ForgeryVCRPage() {
         </h1>
 
         {/* Author List */}
-        <div className="flex flex-col items-center mb-4 text-lg text-slate-900 font-bold">
+        <div className="author-list flex flex-col items-center mb-4 text-sm sm:text-base md:text-lg leading-relaxed text-slate-900 font-bold">
           {/* First Row */}
-          <div className="flex flex-wrap justify-center gap-x-3 mb-2 max-w-5xl">
+          <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 mb-1 sm:mb-2 max-w-5xl">
             <span className="hover:text-purple-600 cursor-pointer transition-colors whitespace-nowrap">Youqi Wang<sup>1,2*†</sup></span>
             <span className="hover:text-purple-600 cursor-pointer transition-colors whitespace-nowrap">Shen Chen<sup>2*♠</sup></span>
             <span className="hover:text-purple-600 cursor-pointer transition-colors whitespace-nowrap">Haowei Wang<sup>2</sup></span>
@@ -538,7 +543,7 @@ export default function ForgeryVCRPage() {
             <span className="hover:text-purple-600 cursor-pointer transition-colors whitespace-nowrap">Shunquan Tan<sup>1<span className="text-gray-400 inline-block" style={{ transform: 'scale(1.2) translateY(-0.05em)', verticalAlign: 'baseline', marginLeft: '0.1em' }}>✉</span></sup></span>
           </div>
           {/* Second Row */}
-          <div className="flex flex-wrap justify-center gap-x-3">
+          <div className="flex flex-wrap justify-center gap-x-3 gap-y-1">
             <span className="hover:text-purple-600 cursor-pointer transition-colors whitespace-nowrap">Changsheng Chen<sup>1</sup></span>
             <span className="hover:text-purple-600 cursor-pointer transition-colors whitespace-nowrap">Bin Li<sup>1</sup></span>
             <span className="hover:text-purple-600 cursor-pointer transition-colors whitespace-nowrap">Shouhong Ding<sup>2<span className="text-gray-400 inline-block" style={{ transform: 'scale(1.2) translateY(-0.05em)', verticalAlign: 'baseline', marginLeft: '0.1em' }}>✉</span></sup></span>
@@ -548,17 +553,17 @@ export default function ForgeryVCRPage() {
           <div><sup>1</sup>Shenzhen University</div>
           <div><sup>2</sup>Tencent Youtu Lab</div>
         </div>
-        <div className="text-xs text-slate-400 mb-10">
+        <div className="text-xs leading-relaxed text-slate-400 mb-8 sm:mb-10">
           <div><sup>*</sup>Equal contribution. <sup>♠</sup>Project Leader. <sup><span className="text-gray-400 inline-block" style={{ transform: 'scale(1.2) translateY(-0.05em)', verticalAlign: 'baseline', marginLeft: '0.1em' }}>✉</span></sup>Corresponding author. <sup>†</sup>Work done during internship at Tencent Youtu Lab.</div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex justify-center gap-4">
+        <div className="hero-actions flex flex-wrap justify-center gap-3 sm:gap-4 max-w-xl mx-auto">
           <a
             href="https://arxiv.org/abs/2602.14098"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex items-center px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg hover:bg-slate-700 hover:-translate-y-0.5 active:translate-y-0 group"
+            className="relative flex items-center justify-center px-5 sm:px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg hover:bg-slate-700 hover:-translate-y-0.5 active:translate-y-0 group"
             aria-label="Read the ForgeryVCR paper on arXiv"
           >
             {/* Academicons arXiv 图标 */}
@@ -569,7 +574,7 @@ export default function ForgeryVCRPage() {
             href="https://github.com/youqiwong/ForgeryVCR"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex items-center px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg hover:bg-slate-700 hover:-translate-y-0.5 active:translate-y-0 group"
+            className="relative flex items-center justify-center px-5 sm:px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg hover:bg-slate-700 hover:-translate-y-0.5 active:translate-y-0 group"
             aria-label="View the ForgeryVCR code on GitHub"
           >
             {/* GitHub icon from Simple Icons */}
@@ -582,7 +587,7 @@ export default function ForgeryVCRPage() {
             href="https://huggingface.co/spaces/youqiwong/ForgeryVCR-Demo"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex items-center px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg hover:bg-slate-700 hover:-translate-y-0.5 active:translate-y-0 group"
+            className="relative flex items-center justify-center px-5 sm:px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg hover:bg-slate-700 hover:-translate-y-0.5 active:translate-y-0 group"
             aria-label="Try the ForgeryVCR demo on Hugging Face"
           >
             <Play size={18} className="mr-2" />
@@ -592,7 +597,7 @@ export default function ForgeryVCRPage() {
             href="https://huggingface.co/youqiwong/ForgeryVCR"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex items-center px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg hover:bg-slate-700 hover:-translate-y-0.5 active:translate-y-0 group"
+            className="relative flex items-center justify-center px-5 sm:px-6 py-3 bg-slate-800 text-white rounded-full font-semibold transition-all shadow-lg hover:bg-slate-700 hover:-translate-y-0.5 active:translate-y-0 group"
             aria-label="View the ForgeryVCR model on Hugging Face"
           >
             <Box size={18} className="mr-2" />
@@ -602,7 +607,7 @@ export default function ForgeryVCRPage() {
       </header>
 
       {/* Figure with hover effect */}
-      <section className="max-w-4xl mx-auto px-6 mb-16">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
         <div className="flex flex-col items-center p-4">
           <div className="transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl rounded-lg">
             <img 
@@ -620,17 +625,17 @@ export default function ForgeryVCRPage() {
       </section>
 
       {/* 1. Abstract */}
-      <section id="abstract" className="max-w-4xl mx-auto px-6 mb-16">
+      <section id="abstract" className="max-w-4xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
         <h1 className="text-3xl font-bold mb-6 text-slate-900 text-center">Abstract</h1>
-        <div className="bg-white rounded-lg p-8" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
-        <p className="text-lg leading-relaxed text-slate-600 text-justify">
+        <div className="bg-white rounded-lg p-5 sm:p-8" style={{ boxShadow: '0 -4px 15px -5px rgba(0, 0, 0, 0.05), 0 4px 15px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -5px rgba(0, 0, 0, 0.05), 0 -8px 15px -5px rgba(0, 0, 0, 0.05)' }}>
+        <p className="text-base sm:text-lg leading-relaxed text-slate-600 text-left sm:text-justify">
             Existing Multimodal Large Language Models (MLLMs) for image forgery detection and localization predominantly operate under a text-centric Chain-of-Thought (CoT) paradigm. However, forcing these models to textually characterize imperceptible low-level tampering traces inevitably leads to hallucinations, as linguistic modalities are insufficient to capture such fine-grained pixel-level inconsistencies. To overcome this, we propose <strong>ForgeryVCR</strong>, a framework that incorporates a forensic toolbox to materialize imperceptible traces into explicit visual intermediates via Visual-Centric Reasoning. To enable efficient tool utilization, we introduce a Strategic Tool Learning post-training paradigm, encompassing gain-driven trajectory construction for Supervised Fine-Tuning (SFT) and subsequent Reinforcement Learning (RL) optimization guided by a tool utility reward. This paradigm empowers the MLLM to act as a proactive decision-maker, learning to spontaneously invoke multi-view reasoning paths including local zoom-in for fine-grained inspection and the analysis of invisible inconsistencies in compression history, noise residuals, and frequency domains. Extensive experiments reveal that ForgeryVCR achieves state-of-the-art (SOTA) performance in both detection and localization tasks, demonstrating superior generalization and robustness with minimal tool redundancy. The code is available at https://github.com/youqiwong/ForgeryVCR.
           </p>
         </div>
       </section>
 
       {/* 2. Methodology */}
-      <section id="method" className="max-w-5xl mx-auto px-6 mb-16">
+      <section id="method" className="max-w-5xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
         <h1 className="text-3xl font-bold mb-6 text-slate-900 text-center">Methodology</h1>
         
         <h2 className="text-2xl font-bold mb-8 text-slate-900 text-center">ForgeryVCR: Visual-Centric Reasoning Framework</h2>
@@ -685,7 +690,7 @@ export default function ForgeryVCRPage() {
       </section>
 
       {/* 3. Experiments */}
-      <section id="experiments" className="max-w-5xl mx-auto px-6 mb-16">
+      <section id="experiments" className="max-w-5xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
         <h1 className="text-3xl font-bold mb-6 text-slate-900 text-center">Experiments</h1>
         
         {/* Detection Performance Table */}
@@ -738,7 +743,7 @@ export default function ForgeryVCRPage() {
       </section>
 
       {/* 4. Analysis */}
-      <section id="analysis" className="max-w-5xl mx-auto px-6 mb-16">
+      <section id="analysis" className="max-w-5xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16">
         <h1 className="text-3xl font-bold mb-6 text-slate-900 text-center">Analysis</h1>
         
         {/* Training Dynamics and Tool Usage - Side by Side */}
@@ -806,7 +811,7 @@ export default function ForgeryVCRPage() {
       </section>
 
       {/* 5. Visualization */}
-      <section id="visualization" className="max-w-6xl mx-auto px-6 mb-20">
+      <section id="visualization" className="max-w-6xl mx-auto px-4 sm:px-6 mb-16 sm:mb-20">
         <h1 className="text-4xl font-bold mb-12 text-slate-900 text-center">Visualization</h1>
         
         {/* 5.1 Visual-Centric Reasoning Visualization */}
@@ -851,7 +856,7 @@ export default function ForgeryVCRPage() {
       {/* 回到顶部按钮 */}
       <button
         onClick={scrollToTop}
-        className={`fixed right-8 bottom-8 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-teal-400 to-blue-400 text-white shadow-lg hover:scale-110 transition-all duration-500 ${
+        className={`fixed right-4 sm:right-8 bottom-4 sm:bottom-8 z-50 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-teal-400 to-blue-400 text-white shadow-lg hover:scale-110 transition-all duration-500 ${
           showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
         aria-label="Scroll to top"

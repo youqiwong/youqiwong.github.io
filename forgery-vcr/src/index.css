@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 639px) {
+  .hero-title {
+    overflow-wrap: anywhere;
+  }
+
+  .hero-actions > * {
+    flex: 1 1 calc(50% - 0.75rem);
+    min-width: 8.5rem;
+  }
+
+  .project-page .p-8 {
+    padding: 1.25rem;
+  }
+
+  .project-page .text-4xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .project-page .text-justify {
+    text-align: left;
+  }
+}
