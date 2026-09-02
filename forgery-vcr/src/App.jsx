@@ -257,7 +257,7 @@ const MultipleCoVTDemo = () => {
         }`}>
           <h3 className="text-xl font-bold text-orange-600 mb-4 uppercase tracking-wide">Answer</h3>
           
-          <div className="space-y-2 font-mono text-base">
+          <div className="answer-trace min-w-0 space-y-2 font-mono text-base whitespace-normal">
             {currentDemo.toolCalls.map((tool, idx) => (
               <div key={idx} className="space-y-1">
                 {/* tool_call - 不换行 */}

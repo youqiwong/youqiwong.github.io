@@ -14,6 +14,11 @@ body {
   overflow-x: hidden;
 }
 
+.answer-trace {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 @media (max-width: 639px) {
   .hero-title {
     overflow-wrap: anywhere;
