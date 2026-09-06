@@ -26,6 +26,7 @@
     />
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="undergraduate.css" />
+    <script src="../i18n.js" defer></script>
     <script src="../script.js" defer></script>
     <script src="undergraduate.js" defer></script>
   </head>
@@ -50,6 +51,9 @@
           <a href="#research-foundation">Early research</a>
           <a href="#awards">Awards</a>
           <a class="nav-cta" href="../">Back home</a>
+          <button class="language-toggle" type="button" data-language-toggle aria-label="切换为中文">
+            <span data-language-label>中文</span>
+          </button>
         </nav>
       </div>
     </header>
@@ -188,6 +192,16 @@
                 <h3>RAICOM Robotics Developer Competition</h3>
                 <p>Won provincial and national second prizes in the Safe City track.</p>
               </div>
+              <div class="robotics-awards" aria-label="RAICOM award certificates">
+                <figure>
+                  <img src="../assets/undergraduate/awards/raicom-provincial-award.webp" alt="RAICOM provincial second prize certificate" loading="lazy" />
+                  <figcaption>Provincial Second Prize</figcaption>
+                </figure>
+                <figure>
+                  <img src="../assets/undergraduate/awards/raicom-national-award.webp" alt="RAICOM national second prize certificate" loading="lazy" />
+                  <figcaption>National Second Prize</figcaption>
+                </figure>
+              </div>
             </article>
           </div>
         </div>
@@ -229,9 +243,12 @@
                 conversation capabilities for a quantum-domain large language model.
               </p>
             </div>
-            <div class="baidu-photos">
-              <img src="../assets/undergraduate/moments/baidu-lobby.webp" alt="At Baidu during the Quantum Computing Institute internship" loading="lazy" />
-              <img src="../assets/undergraduate/moments/baidu-mentor.webp" alt="Photo from the Baidu Quantum Computing Institute internship" loading="lazy" />
+            <div class="baidu-sharing-visual">
+              <img class="baidu-sharing-full" src="../assets/undergraduate/moments/baidu-tech-share.webp" alt="Technical sharing session at Baidu Research" loading="lazy" />
+              <figure class="baidu-speaker-focus">
+                <img src="../assets/undergraduate/moments/baidu-tech-share-speaker.webp" alt="Youqi Wang presenting at a technical sharing session" loading="lazy" />
+                <figcaption>Technical sharing · Baidu Research</figcaption>
+              </figure>
             </div>
           </article>
         </div>
@@ -268,11 +285,11 @@
             </p>
           </div>
           <div class="offer-list" aria-label="Postgraduate offers received">
-            <span>Imperial College London</span>
-            <span>London School of Economics</span>
-            <span>Northeastern University</span>
-            <span>Nanjing University of Science & Technology</span>
-            <span>Shenzhen University</span>
+            <div class="offer-item"><span class="school-logo"><img src="../assets/undergraduate/schools/imperial.webp" alt="Imperial College London logo" loading="lazy" /></span><span>Imperial College London</span></div>
+            <div class="offer-item"><span class="school-logo"><img src="../assets/undergraduate/schools/lse.webp" alt="London School of Economics logo" loading="lazy" /></span><span>London School of Economics</span></div>
+            <div class="offer-item"><span class="school-logo"><img src="../assets/undergraduate/schools/neu.webp" alt="Northeastern University logo" loading="lazy" /></span><span>Northeastern University</span></div>
+            <div class="offer-item"><span class="school-logo"><img src="../assets/undergraduate/schools/njust.webp" alt="Nanjing University of Science and Technology logo" loading="lazy" /></span><span>Nanjing University of Science & Technology</span></div>
+            <div class="offer-item"><span class="school-logo"><img src="../assets/undergraduate/schools/szu.webp" alt="Shenzhen University logo" loading="lazy" /></span><span>Shenzhen University</span></div>
           </div>
         </div>
       </section>
@@ -290,19 +307,37 @@
         </div>
 
         <div class="award-marquee" aria-hidden="true">
-          <div class="award-marquee-track">
-            <img src="../assets/undergraduate/awards/mcm-finalist.webp" alt="" />
-            <img src="../assets/undergraduate/awards/jiangsu-triple-a-student.webp" alt="" />
-            <img src="../assets/undergraduate/awards/apmcm-first-prize.webp" alt="" />
-            <img src="../assets/undergraduate/awards/tianji-scholarship.webp" alt="" />
-            <img src="../assets/undergraduate/awards/cumcm-jiangsu-first-prize.webp" alt="" />
-            <img src="../assets/undergraduate/awards/utility-model-patent.webp" alt="" />
-            <img src="../assets/undergraduate/awards/mcm-finalist.webp" alt="" />
-            <img src="../assets/undergraduate/awards/jiangsu-triple-a-student.webp" alt="" />
-            <img src="../assets/undergraduate/awards/apmcm-first-prize.webp" alt="" />
-            <img src="../assets/undergraduate/awards/tianji-scholarship.webp" alt="" />
-            <img src="../assets/undergraduate/awards/cumcm-jiangsu-first-prize.webp" alt="" />
-            <img src="../assets/undergraduate/awards/utility-model-patent.webp" alt="" />
+          <div class="award-marquee-row">
+            <div class="award-marquee-track">
+              <img src="../assets/undergraduate/awards/mcm-finalist.webp" alt="" />
+              <img src="../assets/undergraduate/awards/jiangsu-triple-a-student.webp" alt="" />
+              <img src="../assets/undergraduate/awards/apmcm-first-prize.webp" alt="" />
+              <img src="../assets/undergraduate/awards/tianji-scholarship.webp" alt="" />
+              <img src="../assets/undergraduate/awards/cumcm-jiangsu-first-prize.webp" alt="" />
+              <img src="../assets/undergraduate/awards/utility-model-patent.webp" alt="" />
+              <img src="../assets/undergraduate/awards/mcm-finalist.webp" alt="" />
+              <img src="../assets/undergraduate/awards/jiangsu-triple-a-student.webp" alt="" />
+              <img src="../assets/undergraduate/awards/apmcm-first-prize.webp" alt="" />
+              <img src="../assets/undergraduate/awards/tianji-scholarship.webp" alt="" />
+              <img src="../assets/undergraduate/awards/cumcm-jiangsu-first-prize.webp" alt="" />
+              <img src="../assets/undergraduate/awards/utility-model-patent.webp" alt="" />
+            </div>
+          </div>
+          <div class="award-marquee-row award-marquee-row-reverse">
+            <div class="award-marquee-track">
+              <img src="../assets/undergraduate/awards/raicom-provincial-award.webp" alt="" />
+              <img src="../assets/undergraduate/awards/raicom-national-award.webp" alt="" />
+              <img src="../assets/undergraduate/awards/national-mathematics-competition.webp" alt="" />
+              <img src="../assets/undergraduate/awards/software-copyright-one.webp" alt="" />
+              <img src="../assets/undergraduate/awards/volunteer-service.webp" alt="" />
+              <img src="../assets/undergraduate/awards/model-student-2022.webp" alt="" />
+              <img src="../assets/undergraduate/awards/raicom-provincial-award.webp" alt="" />
+              <img src="../assets/undergraduate/awards/raicom-national-award.webp" alt="" />
+              <img src="../assets/undergraduate/awards/national-mathematics-competition.webp" alt="" />
+              <img src="../assets/undergraduate/awards/software-copyright-one.webp" alt="" />
+              <img src="../assets/undergraduate/awards/volunteer-service.webp" alt="" />
+              <img src="../assets/undergraduate/awards/model-student-2022.webp" alt="" />
+            </div>
           </div>
         </div>
 

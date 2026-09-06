@@ -192,6 +192,25 @@ a {
   transform: translateY(-2px);
 }
 
+.language-toggle {
+  min-width: 52px;
+  padding: 9px 13px;
+  border: 1px solid rgba(23, 86, 209, 0.24);
+  border-radius: 999px;
+  color: var(--blue-dark);
+  background: rgba(255, 255, 255, 0.72);
+  font: 800 12px/1 var(--body);
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.language-toggle:hover {
+  color: white;
+  border-color: var(--blue);
+  background: var(--blue);
+  transform: translateY(-2px);
+}
+
 .menu-toggle {
   display: none;
 }
@@ -700,30 +719,44 @@ a {
 }
 
 .gateway-card-one {
-  width: 68%;
+  width: 59%;
   aspect-ratio: 1.42;
-  top: 3%;
-  left: 7%;
-  z-index: 3;
-  transform: rotate(-4deg) translateZ(42px);
+  top: 1%;
+  left: 5%;
+  z-index: 4;
+  transform: rotate(-4deg) translateZ(48px);
 }
 
 .gateway-card-two {
-  width: 63%;
+  width: 54%;
   aspect-ratio: 1.42;
-  right: 0;
-  bottom: 3%;
-  z-index: 2;
-  transform: rotate(4.5deg) translateZ(18px);
+  top: 10%;
+  right: -1%;
+  z-index: 3;
+  transform: rotate(5deg) translateZ(30px);
 }
 
 .gateway-card-three {
-  width: 58%;
+  width: 55%;
   aspect-ratio: 1.42;
-  left: 1%;
+  left: 0;
+  bottom: 2%;
+  z-index: 2;
+  transform: rotate(-6deg) translateZ(12px);
+}
+
+.gateway-card-four {
+  width: 56%;
+  aspect-ratio: 1.42;
+  right: 1%;
   bottom: 0;
   z-index: 1;
-  transform: rotate(-8deg) translateZ(0);
+  transform: rotate(6deg) translateZ(0);
+}
+
+.gateway-card-photo img {
+  object-fit: cover;
+  object-position: center 43%;
 }
 
 .journey-gateway-visual:hover .gateway-card-one {
@@ -736,6 +769,10 @@ a {
 
 .journey-gateway-visual:hover .gateway-card-three {
   transform: translate(-8px, 8px) rotate(-5deg);
+}
+
+.journey-gateway-visual:hover .gateway-card-four {
+  transform: translate(8px, 9px) rotate(4deg);
 }
 
 .gateway-orbit {
@@ -1593,6 +1630,13 @@ a {
 
   .nav-cta {
     margin-top: 5px;
+    text-align: center;
+  }
+
+  .language-toggle {
+    width: 100%;
+    margin-top: 7px;
+    padding: 13px 14px;
     text-align: center;
   }
 
