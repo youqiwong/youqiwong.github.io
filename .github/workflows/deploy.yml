@@ -32,9 +32,10 @@ jobs:
 
       - name: Prepare site
         run: |
-          mkdir -p _site/assets _site/projects/ForgeryVCR
+          mkdir -p _site/assets _site/undergraduate _site/projects/ForgeryVCR
           cp index.html styles.css script.js _site/
           cp -R assets/. _site/assets/
+          cp -R undergraduate/. _site/undergraduate/
           cp -R forgery-vcr/dist/. _site/projects/ForgeryVCR/
           touch _site/.nojekyll
 
