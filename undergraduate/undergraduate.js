@@ -8,7 +8,9 @@ awardCards.forEach((card) => {
   card.addEventListener("click", () => {
     awardDialogImage.src = card.dataset.awardSrc;
     awardDialogImage.alt = card.querySelector("img").alt;
-    awardDialogTitle.textContent = card.dataset.awardTitle;
+    const title = card.querySelector("strong")?.textContent ?? card.dataset.awardTitle;
+    const detail = card.querySelector("small")?.textContent ?? "";
+    awardDialogTitle.textContent = detail ? `${title} · ${detail}` : title;
     awardDialog.showModal();
   });
 });

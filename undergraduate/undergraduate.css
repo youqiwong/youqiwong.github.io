@@ -456,6 +456,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+  align-items: start;
   margin-top: 24px;
 }
 
@@ -519,6 +520,36 @@
   max-height: 130px;
   object-fit: contain;
   filter: drop-shadow(0 14px 18px rgba(19, 40, 80, 0.22));
+}
+
+.robotics-awards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 0 28px 28px;
+}
+
+.robotics-awards figure {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid rgba(23, 86, 209, 0.12);
+  border-radius: 8px;
+  background: #f5f8ff;
+}
+
+.robotics-awards img {
+  width: 100%;
+  height: 112px;
+  object-fit: contain;
+  background: white;
+}
+
+.robotics-awards figcaption {
+  margin-top: 7px;
+  color: var(--blue-dark);
+  font-size: 9px;
+  font-weight: 800;
+  text-align: center;
 }
 
 .research-foundation {
@@ -590,18 +621,51 @@
   background: white;
 }
 
-.baidu-photos {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 12px;
-  min-height: 300px;
+.baidu-sharing-visual {
+  position: relative;
+  min-height: 370px;
+  overflow: hidden;
+  border-radius: 12px 26px 12px 26px;
+  background: #e7edf8;
 }
 
-.baidu-photos img {
+.baidu-sharing-full {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  object-position: center;
+}
+
+.baidu-speaker-focus {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 31%;
+  margin: 0;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 40px rgba(17, 43, 101, 0.28);
+  backdrop-filter: blur(10px);
+}
+
+.baidu-speaker-focus img {
+  width: 100%;
+  aspect-ratio: 0.92;
+  object-fit: cover;
+  object-position: center 34%;
+  border-radius: 6px;
+}
+
+.baidu-speaker-focus figcaption {
+  padding: 7px 4px 2px;
+  color: var(--blue-dark);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .community-section {
@@ -704,7 +768,11 @@
   align-content: center;
 }
 
-.offer-list span {
+.offer-item {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 13px;
+  align-items: center;
   padding: 15px 17px;
   border: 1px solid rgba(255, 255, 255, 0.17);
   border-radius: 8px;
@@ -713,6 +781,22 @@
   font-family: var(--display);
   font-size: 13px;
   font-weight: 700;
+}
+
+.school-logo {
+  width: 58px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 5px;
+  border-radius: 6px;
+  background: white;
+}
+
+.school-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .award-archive {
@@ -727,10 +811,18 @@
 .award-marquee {
   width: 100%;
   overflow: hidden;
-  padding: 28px 0 34px;
+  padding: 24px 0 28px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.7);
+}
+
+.award-marquee-row {
+  overflow: hidden;
+}
+
+.award-marquee-row + .award-marquee-row {
+  margin-top: 16px;
 }
 
 .award-marquee-track {
@@ -738,12 +830,16 @@
   display: flex;
   gap: 18px;
   padding-left: 18px;
-  animation: award-drift 46s linear infinite;
+  animation: award-drift 34s linear infinite;
+}
+
+.award-marquee-row-reverse .award-marquee-track {
+  animation-direction: reverse;
 }
 
 .award-marquee-track img {
   width: 260px;
-  height: 178px;
+  height: 164px;
   padding: 7px;
   object-fit: contain;
   border: 1px solid var(--line);
@@ -1063,8 +1159,8 @@
     padding: 32px 25px;
   }
 
-  .baidu-photos {
-    min-height: 240px;
+  .baidu-sharing-visual {
+    min-height: 320px;
   }
 
   .community-card img {
@@ -1122,12 +1218,22 @@
     max-height: 230px;
   }
 
-  .baidu-photos {
+  .baidu-sharing-visual {
+    min-height: 285px;
+  }
+
+  .baidu-speaker-focus {
+    right: 10px;
+    bottom: 10px;
+    width: 38%;
+  }
+
+  .robotics-awards {
     grid-template-columns: 1fr;
   }
 
-  .baidu-photos img {
-    max-height: 260px;
+  .robotics-awards img {
+    height: 170px;
   }
 
   .award-card img {
