@@ -157,6 +157,8 @@ const translations = new Map(
     "Applied mathematical and engineering foundations to retrieval and long-context conversation capabilities for a quantum-domain large language model.":
       "将数学与工程基础用于量子领域大语言模型的检索及长上下文对话能力建设。",
     "Technical sharing · Baidu Research": "技术分享 · 百度研究院",
+    "Baidu Research": "百度研究院",
+    "Technical sharing": "技术分享",
     "04 / Community": "04 / 公共服务",
     "Knowledge grows when it is shared.": "知识因分享而生长。",
     "volunteer hours": "小时志愿服务",
